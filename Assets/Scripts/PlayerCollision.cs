@@ -14,5 +14,13 @@ public class PlayerCollision : MonoBehaviour
             FindObjectOfType<GameManager>().EndGame();
 
         }
+
+        if (collisionInfo.collider.name == "END")
+        {
+            FindObjectOfType<GameManager>().CompleteLevel();
+
+        }
+
+
     }
 }
