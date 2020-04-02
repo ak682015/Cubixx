@@ -4,12 +4,50 @@ using UnityEngine;
 
 public class ObjectPooler : MonoBehaviour
 {
+    public GameObject player;
+    public GameObject pooledObject;
+    public int pooledAmount;
+
+    List<GameObject> pooledObjects;
+
+
+    private void Start()
+    {
+        pooledObjects = new List<GameObject>();
+
+        for(int i = 0; i < pooledAmount; i++)
+        {
+            GameObject obj = (GameObject)Instantiate(pooledObject);
+            obj.SetActive(false);
+            pooledObjects.Add(obj);
+        }
+    }
+
+
+    public GameObject GetPooledObjects()
+    {
+        for(int i = 0; i<pooledObjects.Count; i++)
+        {
+            if( !pooledObjects[i].activeInHierarchy)
+            {
+                return pooledObjects[i];
+            }
+        }
+
+
+
+        return null;
+    }
+
+    /*
     [System.Serializable]
     public class Pool
     {
         public string tag;
         public GameObject prefab;
         public int size;
+
+        
     }
 
     #region Singleton
@@ -23,9 +61,10 @@ public class ObjectPooler : MonoBehaviour
     public List<Pool> pools;
     public Dictionary<string, Queue<GameObject>> poolDictionary;
 
-    // Start is called before the first frame update
+    
     void Start()
     {
+
         poolDictionary = new Dictionary<string, Queue<GameObject>>();
 
         foreach (Pool pool in pools)
@@ -57,12 +96,22 @@ public class ObjectPooler : MonoBehaviour
         objectToSpawn.SetActive(true);
         objectToSpawn.transform.position = position;
         objectToSpawn.transform.rotation = rotation;
-
-       
+        Debug.Log(objectToSpawn.transform.position.z);
 
         poolDictionary[tag].Enqueue(objectToSpawn);
+
+
+        if ( player.transform.position.z > objectToSpawn.transform.position.z +5f)
+        {
+           objectToSpawn.SetActive(false);
+           poolDictionary[tag].Enqueue(objectToSpawn);
+
+
+        }
         return objectToSpawn;
      
     }
+    */
+
 
 }
