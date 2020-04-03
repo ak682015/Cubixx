@@ -15,13 +15,5 @@ public class ObstacleDestroyer : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        if (transform.position.z < obstacleDestructionPoint.transform.position.z)
-        {
-
-            gameObject.SetActive(false);
-
-        }
-    }
+    
 }
