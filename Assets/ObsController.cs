@@ -15,8 +15,9 @@ public class ObsController : MonoBehaviour
     Queue<GameObject> groundQueue;
     void Awake()
     {
+        Application.targetFrameRate = 60;
         obsposition = new Vector3(0f, 0f, distance);
-        groundposition = new Vector3(0f, -0.1f, 100f);
+        groundposition = new Vector3(0f, -0.1f, 150f);
         groundQueue = new Queue<GameObject>();
         obsDict = new Dictionary<int, Queue<GameObject>>();
 
@@ -64,7 +65,7 @@ public class ObsController : MonoBehaviour
         tempposs = go.transform.position;
         tempposs.z = groundposition.z;
         go.transform.position = tempposs;
-        groundposition = groundposition + new Vector3(0f, 0f, 100f);
+        groundposition = groundposition + new Vector3(0f, -0.001f, 100f);
         groundQueue.Enqueue(go);
     }
 }
