@@ -16,7 +16,7 @@ public class ObsController : MonoBehaviour
     void Awake()
     {
         obsposition = new Vector3(0f, 0f, distance);
-        groundposition = new Vector3(0f, 0f, 100f);
+        groundposition = new Vector3(0f, -0.1f, 100f);
         groundQueue = new Queue<GameObject>();
         obsDict = new Dictionary<int, Queue<GameObject>>();
 
@@ -25,7 +25,7 @@ public class ObsController : MonoBehaviour
             key++;
             Queue<GameObject> objpool = new Queue<GameObject>();
 
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 20; i++)
             {
                 GameObject go = Instantiate(obj, obj.transform.position, obj.transform.rotation);
                 go.SetActive(false);
@@ -34,7 +34,7 @@ public class ObsController : MonoBehaviour
             obsDict.Add(key, objpool);
         }
 
-        for(int i = 0; i < 5; i++)
+        for(int i = 0; i < 10; i++)
         {
             GameObject go = Instantiate(ground, ground.transform.position, ground.transform.rotation);
             go.SetActive(false);

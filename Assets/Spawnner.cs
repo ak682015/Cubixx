@@ -14,6 +14,9 @@ public class Spawnner : MonoBehaviour
         }
 
         obsController.GroundSpawn();
+        obsController.GroundSpawn();
+        obsController.GroundSpawn();
+        obsController.GroundSpawn();
     }
 
     private void OnTriggerEnter(Collider other)
