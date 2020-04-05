@@ -34,9 +34,7 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
 
-
-
-        forwardForce += 0.05f;
+        forwardForce += 0.1f;
         forwardForce = Mathf.Clamp(forwardForce, 2000f, 4000f);
 
         if (transform.position.y < -3)
