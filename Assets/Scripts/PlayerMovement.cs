@@ -36,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
 
 
 
-        forwardForce += 0.5f;
+        forwardForce += 0.05f;
         forwardForce = Mathf.Clamp(forwardForce, 2000f, 4000f);
 
         if (transform.position.y < -3)
