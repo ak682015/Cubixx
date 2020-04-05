@@ -9,7 +9,6 @@ public class ChangeGround : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Ground"))
         {
-            obsController.GroundSpawn();
-        }
+            obsController.GroundSpawn();        }
     }
 }
