@@ -20,8 +20,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: glass
-  m_Shader: {fileID: -6465566751694194690, guid: f5d3193bbfc81d641b1c07e0785a062f,
+  m_Name: lava
+  m_Shader: {fileID: -6465566751694194690, guid: 1d6c2ed1cef70ac40beb9487f397fed2,
     type: 3}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 2
@@ -86,7 +86,7 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 0
     m_Colors:
-    - Color_766D1EBC: {r: 0.3191082, g: 0.9528302, b: 0.8631696, a: 0}
+    - Color_766D1EBC: {r: 0.9339623, g: 0.34673712, b: 0.110137045, a: 0}
     - _BaseColor: {r: 0.48718405, g: 0.8679245, b: 0.8409171, a: 0.8784314}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 1.0180621, b: 1.0721184, a: 1}
