@@ -4,16 +4,13 @@ using UnityEngine;
 
 public class DataSet : MonoBehaviour
 {
-    public static int coins;
+    public static int coin;
+    public static int selectedPlayer;
     
     void Start()
     {
-        
+        coin = 2000;
+        selectedPlayer = 0;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
