@@ -10,10 +10,23 @@ public class PlayerMovement : MonoBehaviour
     public float forwardForce = 2000f;
     public float sidewaysForce = 200f;
 
+
+    private ParticleSystem particle;
+    private MeshRenderer mesh;
+    private AudioSource collideAudio;
+
     private Gyroscope gyro;
     private bool gyroEnabled;
     private Quaternion rot;
-        
+
+
+    private void Awake()
+    {
+        collideAudio = GetComponent<AudioSource>();
+        particle = GetComponentInChildren<ParticleSystem>();
+        mesh = GetComponent<MeshRenderer>();
+  
+    }
 
     private void Start()
     {
@@ -63,16 +76,47 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (other.gameObject.CompareTag("Coins"))
+        /*
+        if (collision.gameObject.CompareTag("Coins"))
         {
-            Destroy(other.gameObject);
+            Destroy(collision.gameObject);
         }
+        */
+
+        if (collision.gameObject.CompareTag("Obstacle"))
+        {
+            StartCoroutine(Break());
+        }
+
     }
+
+    private IEnumerator Break()
+    {
+        collideAudio.PlayDelayed(0.1f);
+        particle.Play();
+        mesh.enabled = false;
+
+
+        //gyro.enabled = false;
+        rb.constraints = RigidbodyConstraints.FreezeAll;
+
+        yield return new WaitForSeconds(particle.main.startLifetime.constantMax + 2f);
+
+        //Destroy(this.gameObject);
+        
+
+        Restart();
+        //Invoke("Restart", 1f);
+
+
+    }
+
 
     void Restart()
     {
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
     }
