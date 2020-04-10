@@ -107,7 +107,9 @@ public class PlayerManager : MonoBehaviour
             selected.gameObject.SetActive(true);
             select.gameObject.SetActive(false);
             price.gameObject.SetActive(false);
+            DataSet.selectedPlayer = indexPlayer;
         }
+
     }
 
     public void buyPlayer()
@@ -117,6 +119,7 @@ public class PlayerManager : MonoBehaviour
             selected.gameObject.SetActive(false);
             select.gameObject.SetActive(true);
             price.gameObject.SetActive(false);
+            PlayerList[indexPlayer].isUnlocked = true;
             DataSet.coin -= 1000;
         }
     }
