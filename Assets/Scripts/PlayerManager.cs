@@ -121,6 +121,7 @@ public class PlayerManager : MonoBehaviour
             price.gameObject.SetActive(false);
             PlayerList[indexPlayer].isUnlocked = true;
             DataSet.coin -= 1000;
+            changeButton(indexPlayer);
         }
     }
 }
