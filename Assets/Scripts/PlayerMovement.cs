@@ -50,10 +50,12 @@ public class PlayerMovement : MonoBehaviour
         forwardForce += 0.1f;
         forwardForce = Mathf.Clamp(forwardForce, 2000f, 4000f);
 
+        /*
         if (transform.position.y < -3)
         {
             Invoke("Restart", 1f);
         }
+        */
 
         rb.AddForce(0, 0, forwardForce * Time.deltaTime);
        
