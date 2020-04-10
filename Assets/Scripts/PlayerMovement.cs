@@ -10,7 +10,6 @@ public class PlayerMovement : MonoBehaviour
     public float forwardForce = 2000f;
     public float sidewaysForce = 200f;
 
-
     private ParticleSystem particle;
     private MeshRenderer mesh;
     private AudioSource collideAudio;
@@ -44,9 +43,11 @@ public class PlayerMovement : MonoBehaviour
         return false;
     }
 
+ 
+
     void FixedUpdate()
     {
-
+      
         forwardForce += 0.1f;
         forwardForce = Mathf.Clamp(forwardForce, 2000f, 4000f);
 

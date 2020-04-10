@@ -11,6 +11,5 @@ public class UiController : MonoBehaviour
     private void Update()
     {
         coins.text = DataSet.coin.ToString();
-        print(DataSet.coin);
     }
 }
