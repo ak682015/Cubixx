@@ -5799,8 +5799,8 @@ TrailRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.022222223
-        value: 0.5857137
+        time: 0
+        value: 0.49904376
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -11982,7 +11982,7 @@ ParticleSystem:
     sphericalDirectionAmount: 1
     randomPositionAmount: 1
     radius:
-      value: 33.2
+      value: 54.4
       mode: 0
       spread: 0
       speed:
