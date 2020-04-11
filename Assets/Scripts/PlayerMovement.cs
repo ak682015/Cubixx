@@ -7,29 +7,31 @@ public class PlayerMovement : MonoBehaviour
 {
 
     public Rigidbody rb;
-    public float forwardForce = 2000f;
-    public float sidewaysForce = 200f;
+    public float forwardForce;
+    public float sidewaysForce;
+    public GameObject camera;
 
     private ParticleSystem particle;
     private MeshRenderer mesh;
-    private AudioSource collideAudio;
 
     private Gyroscope gyro;
     private bool gyroEnabled;
-    private Quaternion rot;
 
+    Vector3 CamPos;
+    Vector3 offset;
 
     private void Awake()
     {
-        collideAudio = GetComponent<AudioSource>();
         particle = GetComponentInChildren<ParticleSystem>();
         mesh = GetComponent<MeshRenderer>();
-  
+        
     }
 
     private void Start()
     {
         gyroEnabled = EnableGyro();
+        CamPos = camera.transform.position;
+        offset = camera.transform.position- transform.position;
     }
 
     private bool EnableGyro()
@@ -47,7 +49,8 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-      
+        CamPos= transform.position + offset;
+        camera.transform.position = CamPos;
         forwardForce += 0.1f;
         forwardForce = Mathf.Clamp(forwardForce, 2000f, 4000f);
 
@@ -97,7 +100,6 @@ public class PlayerMovement : MonoBehaviour
 
     private IEnumerator Break()
     {
-        collideAudio.PlayDelayed(0.1f);
         particle.Play();
         mesh.enabled = false;
 
