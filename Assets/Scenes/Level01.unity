@@ -2607,9 +2607,9 @@ MonoBehaviour:
   distance: 25
   obsPrefab:
   - {fileID: 4989386159191970331, guid: bbe13414e36d0d541bbcdb449caac32e, type: 3}
-  - {fileID: 4088268202904161994, guid: 1c546c8d32aa9934eb9ca41760fa75da, type: 3}
-  - {fileID: 4825380535252458174, guid: fd844b162c43e4e4facf561db6408413, type: 3}
-  - {fileID: 3083237227263109133, guid: 98114ae8d33b7354a85d13d54f9a4ff1, type: 3}
+  - {fileID: 4525340824712724682, guid: 1c546c8d32aa9934eb9ca41760fa75da, type: 3}
+  - {fileID: 74228785545838255, guid: 7a0714e5573e9dd40bd6111430543dac, type: 3}
+  - {fileID: 8669963160788209065, guid: 98114ae8d33b7354a85d13d54f9a4ff1, type: 3}
   - {fileID: 6233482607561758301, guid: fc433338942487f48bd7302b03833812, type: 3}
   - {fileID: 3246264228837803956, guid: 9e24b0b9a188b9047acdc7fd82bc80fc, type: 3}
   - {fileID: 658409640067526094, guid: 6bc59daeaee03f04b88672126dd3974f, type: 3}
@@ -2643,8 +2643,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sound:
+<<<<<<< HEAD
   - name: ButtonClick
     Clip: {fileID: 8300000, guid: 5a3abf8eab6f3774696e622d8c9758ca, type: 3}
+=======
+  - name: 
+    Clip: {fileID: 0}
+    source: {fileID: 0}
+  - name: 
+    Clip: {fileID: 0}
+>>>>>>> 0b92217844a65c569823efef4008f4e7142aac62
     source: {fileID: 0}
   on: {fileID: 7811215343901881012}
   off: {fileID: 1381484180}
@@ -11144,7 +11152,11 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
+<<<<<<< HEAD
           m_StringArgument: ButtonClick
+=======
+          m_StringArgument: 
+>>>>>>> 0b92217844a65c569823efef4008f4e7142aac62
           m_BoolArgument: 1
         m_CallState: 2
 --- !u!224 &7811215344985352228
