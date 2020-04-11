@@ -5,13 +5,24 @@ using UnityEngine;
 public class Coin : MonoBehaviour
 {
     public int coinValue = 1;
-
+    MeshRenderer mesh;
+    private void Start()
+    {
+        mesh = gameObject.GetComponent<MeshRenderer>();
+    }
     private void OnTriggerEnter(Collider other)
     {
         if ( other.gameObject.CompareTag("Player") )
         {
            DataSet.coin += coinValue ;
-            gameObject.SetActive(false);
+            StartCoroutine(meshcollide());
         }
+    }
+
+    IEnumerator meshcollide()
+    {
+        mesh.enabled = false;
+        yield return new WaitForSeconds(2f);
+        mesh.enabled = true;
     }
 }
