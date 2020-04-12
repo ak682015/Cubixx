@@ -24,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
     {
         particle = GetComponentInChildren<ParticleSystem>();
         mesh = GetComponent<MeshRenderer>();
+        rb = GetComponent<Rigidbody>();
         
     }
 
