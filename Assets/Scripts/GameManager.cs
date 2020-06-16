@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine.EventSystems;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    public Text score;
+
     public GameObject HomeUI;
     private void Start()
     {
@@ -15,6 +18,7 @@ public class GameManager : MonoBehaviour
         if(Input.GetMouseButtonDown(0) && !IsPointerOverUIObject())
         {
             HomeUI.SetActive(false);
+            score.gameObject.SetActive(true);
             Time.timeScale = 1f;
         }
     }

@@ -66,7 +66,7 @@ public class ObsController : MonoBehaviour
         tempposs.z = groundposition.z;
         tempposs.y = groundposition.y;
         go.transform.position = tempposs;
-        groundposition = groundposition + new Vector3(0f, -0.001f, 100f);
+        groundposition = groundposition + new Vector3(0f, -0.002f, 100f);
         groundQueue.Enqueue(go);
     }
 }
