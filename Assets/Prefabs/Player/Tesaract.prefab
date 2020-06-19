@@ -13,14 +13,14 @@ GameObject:
   - component: {fileID: 4069865608277601703}
   - component: {fileID: 4069865608277601702}
   - component: {fileID: 4069865608277601721}
-  - component: {fileID: 4069865608277601720}
+  - component: {fileID: 789259340}
   m_Layer: 0
   m_Name: Tesaract
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4069865608277601701
 Transform:
   m_ObjectHideFlags: 0
@@ -112,7 +112,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 1
---- !u!114 &4069865608277601720
+--- !u!114 &789259340
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -124,9 +124,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 144ee34363f56b343976db07bbad5372, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 4069865608277601721}
+  rb: {fileID: 0}
   forwardForce: 2000
-  sidewaysForce: 200
+  sidewaysForce: 100
+  camera: {fileID: 0}
 --- !u!1 &4069865609309688400
 GameObject:
   m_ObjectHideFlags: 0

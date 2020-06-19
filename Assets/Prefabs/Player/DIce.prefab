@@ -150,14 +150,14 @@ GameObject:
   - component: {fileID: 6600396872976172504}
   - component: {fileID: 6600396872976172505}
   - component: {fileID: 6600396872976172454}
-  - component: {fileID: 6600396872976172455}
+  - component: {fileID: 1602256170}
   m_Layer: 0
   m_Name: DIce
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6600396872976172506
 Transform:
   m_ObjectHideFlags: 0
@@ -249,7 +249,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.02, y: 0.02, z: 0.02}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6600396872976172455
+--- !u!114 &1602256170
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -261,6 +261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 144ee34363f56b343976db07bbad5372, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 6600396872976172505}
+  rb: {fileID: 0}
   forwardForce: 2000
-  sidewaysForce: 200
+  sidewaysForce: 100
+  camera: {fileID: 0}

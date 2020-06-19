@@ -13,14 +13,14 @@ GameObject:
   - component: {fileID: 2962771359002990918}
   - component: {fileID: 2962771359002991289}
   - component: {fileID: 2962771359002991288}
-  - component: {fileID: 2962771359002990917}
+  - component: {fileID: 827150859}
   m_Layer: 0
   m_Name: Default
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2962771359002990916
 Transform:
   m_ObjectHideFlags: 0
@@ -111,7 +111,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!114 &2962771359002990917
+--- !u!114 &827150859
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -123,6 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 144ee34363f56b343976db07bbad5372, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 2962771359002991288}
+  rb: {fileID: 0}
   forwardForce: 2000
-  sidewaysForce: 50
+  sidewaysForce: 100
+  camera: {fileID: 0}

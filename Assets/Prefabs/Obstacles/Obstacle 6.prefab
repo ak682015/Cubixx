@@ -17,7 +17,7 @@ GameObject:
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &3246264227642392544
 Transform:
@@ -110,7 +110,7 @@ GameObject:
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &3246264227647956597
 Transform:
@@ -196,11 +196,11 @@ GameObject:
   m_Component:
   - component: {fileID: 3246264228837803957}
   m_Layer: 0
-  m_Name: Obstacle 5 1
+  m_Name: Obstacle 6
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &3246264228837803957
 Transform:
@@ -293,6 +293,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coin (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2854155336637765800, guid: a50e6036f64e51845af92fbc5af30463,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a50e6036f64e51845af92fbc5af30463, type: 3}
 --- !u!4 &3833706579930549555 stripped
@@ -373,6 +378,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coin (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2854155336637765800, guid: a50e6036f64e51845af92fbc5af30463,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a50e6036f64e51845af92fbc5af30463, type: 3}
 --- !u!4 &4042494775577421160 stripped
@@ -452,6 +462,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Coin
+      objectReference: {fileID: 0}
+    - target: {fileID: 2854155336637765800, guid: a50e6036f64e51845af92fbc5af30463,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a50e6036f64e51845af92fbc5af30463, type: 3}

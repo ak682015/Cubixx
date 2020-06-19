@@ -26,7 +26,7 @@ public class ObsController : MonoBehaviour
             key++;
             Queue<GameObject> objpool = new Queue<GameObject>();
 
-            for (int i = 0; i < 20; i++)
+            for (int i = 0; i < 10; i++)
             {
                 GameObject go = Instantiate(obj, obj.transform.position, obj.transform.rotation);
                 go.SetActive(false);

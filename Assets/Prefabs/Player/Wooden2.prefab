@@ -126,7 +126,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 2318983492674299586}
   forwardForce: 2000
-  sidewaysForce: 200
+  sidewaysForce: 100
+  camera: {fileID: 0}
 --- !u!1 &2318983493415613119
 GameObject:
   m_ObjectHideFlags: 0

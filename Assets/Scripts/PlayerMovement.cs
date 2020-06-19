@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -55,12 +54,11 @@ public class PlayerMovement : MonoBehaviour
         forwardForce += 0.1f;
         forwardForce = Mathf.Clamp(forwardForce, 2000f, 4000f);
 
-     
+
         if (transform.position.y < -3)
         {
-            Invoke("Restart", 1f);
+            Restart();
         }
-       
 
         rb.AddForce(0, 0, forwardForce * Time.deltaTime);
        
@@ -85,12 +83,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        /*
-        if (collision.gameObject.CompareTag("Coins"))
-        {
-            Destroy(collision.gameObject);
-        }
-        */
+  
 
         if (collision.gameObject.CompareTag("Obstacle"))
         {

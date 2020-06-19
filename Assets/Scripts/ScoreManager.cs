@@ -2,28 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using TMPro;
 
 public class ScoreManager : MonoBehaviour
 {
+    public int score;
+    public Text scoreText;
+    public TextMeshProUGUI bestScore;
 
-    public static ScoreManager instance;
-    public Text text;
-    int score;
-
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        if(instance == null)
-        {
-            instance = this;
-        }
+        score = 0;
+        bestScore.text = PlayerPrefs.GetInt("bestscore", 0).ToString();
     }
 
-    // Update is called once per frame
-    public void ChangeScore(int coinValue)
+
+    private void FixedUpdate()
     {
-        score += coinValue;
-        text.text = score.ToString("0");
+        score++;
+        scoreText.text = score.ToString("0");
+        if(score>PlayerPrefs.GetInt("bestscore",0))
+        {
+            PlayerPrefs.SetInt("bestscore", score);
+        }
     }
 }
