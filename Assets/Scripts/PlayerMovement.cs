@@ -60,7 +60,7 @@ public class PlayerMovement : MonoBehaviour
             Restart();
         }
 
-        rb.AddForce(0, 0, forwardForce * Time.deltaTime);
+       //rb.AddForce(0, 0, forwardForce * Time.deltaTime);
        
         if(gyroEnabled)
         {
