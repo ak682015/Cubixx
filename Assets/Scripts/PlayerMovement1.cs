@@ -2,19 +2,20 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement1 : MonoBehaviour
 {
 
-
+    public Rigidbody rb;
+    public float forwardForce;
+    public float sidewaysForce;
     public GameObject camera;
 
     private ParticleSystem particle;
     private MeshRenderer mesh;
-
+    public float speed;
     private Gyroscope gyro;
     private bool gyroEnabled;
 
-    public float speed;
     Vector3 CamPos,tempPos;
     Vector3 offset;
 
@@ -22,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
     {
         particle = GetComponentInChildren<ParticleSystem>();
         mesh = GetComponent<MeshRenderer>();
+        rb = GetComponent<Rigidbody>();
         
     }
 
@@ -50,12 +52,10 @@ public class PlayerMovement : MonoBehaviour
     {
         CamPos= transform.position + offset;
         camera.transform.position = CamPos;
-
         tempPos = transform.position;
 
         tempPos.z += speed * Time.deltaTime;
-
-        if (gyroEnabled)
+        if(gyroEnabled)
         {
             tempPos.x = tempPos.x - gyro.attitude.x;
             print(gyro.attitude.x);
@@ -65,11 +65,14 @@ public class PlayerMovement : MonoBehaviour
         transform.position = tempPos;
 
 
+   
+
         if (transform.position.y < -3)
         {
             Restart();
         }
-  
+
+      
 
     }
 
@@ -91,6 +94,7 @@ public class PlayerMovement : MonoBehaviour
 
 
         //gyro.enabled = false;
+        rb.constraints = RigidbodyConstraints.FreezeAll;
 
         yield return new WaitForSeconds(particle.main.startLifetime.constantMax + 2f);
 
