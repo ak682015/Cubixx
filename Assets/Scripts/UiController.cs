@@ -10,6 +10,6 @@ public class UiController : MonoBehaviour
 
     private void Update()
     {
-        coins.text = DataSet.coin.ToString();
+       // coins.text = DataSet.coin.ToString();
     }
 }

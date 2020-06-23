@@ -48,7 +48,7 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        CamPos= transform.position + offset;
+        CamPos.z = transform.position.z + offset.z;
         camera.transform.position = CamPos;
 
         tempPos = transform.position;
@@ -57,13 +57,13 @@ public class PlayerMovement : MonoBehaviour
 
         if (gyroEnabled)
         {
-            tempPos.x = tempPos.x - gyro.attitude.x;
+            tempPos.x = tempPos.x - gyro.attitude.x * 0.5f;
             print(gyro.attitude.x);
         }
 
 
         transform.position = tempPos;
-
+        speed += 0.0005f;
 
         if (transform.position.y < -3)
         {

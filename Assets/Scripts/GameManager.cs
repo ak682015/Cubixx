@@ -9,18 +9,19 @@ public class GameManager : MonoBehaviour
     public Text score;
 
     public GameObject HomeUI;
+
+    private void Awake()
+    {
+        Application.targetFrameRate = 60;
+    }
+
     private void Start()
     {
-        Time.timeScale = 0f;
+        Time.timeScale = 1f;
     }
     private void Update()
     {
-        if(Input.GetMouseButtonDown(0) && !IsPointerOverUIObject())
-        {
-            HomeUI.SetActive(false);
-            score.gameObject.SetActive(true);
-            Time.timeScale = 1f;
-        }
+       
     }
 
 
