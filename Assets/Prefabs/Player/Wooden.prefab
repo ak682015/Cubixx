@@ -126,6 +126,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camera: {fileID: 0}
   HomeUI: {fileID: 0}
+  particle: {fileID: 2528456772397083536, guid: c48b99e8fe03b2346af1844ba851697b,
+    type: 3}
+  trail: {fileID: 7659978452876438391}
   speed: 15
 --- !u!1 &7659978452876438393
 GameObject:
