@@ -4,13 +4,10 @@ using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
-
-
     public GameObject camera;
-
-    private ParticleSystem particle;
-    private MeshRenderer mesh;
-
+    public GameObject HomeUI;
+    public ParticleSystem particle;
+    public TrailRenderer trail;
     private Gyroscope gyro;
     private bool gyroEnabled;
 
@@ -20,9 +17,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
-        particle = GetComponentInChildren<ParticleSystem>();
-        mesh = GetComponent<MeshRenderer>();
-        
+        particle.gameObject.GetComponent<ParticleSystemRenderer>().material = gameObject.GetComponent<MeshRenderer>().material;
     }
 
     private void Start()
@@ -31,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
         CamPos = camera.transform.position;
         offset = camera.transform.position- transform.position;
         tempPos = transform.position;
+        
     }
 
     private bool EnableGyro()
@@ -65,49 +61,26 @@ public class PlayerMovement : MonoBehaviour
         transform.position = tempPos;
         speed += 0.0005f;
 
-        if (transform.position.y < -3)
-        {
-            Restart();
-        }
-  
-
     }
 
     private void OnCollisionEnter(Collision collision)
     {
   
-
         if (collision.gameObject.CompareTag("Obstacle"))
         {
-            StartCoroutine(Break());
+            StartCoroutine(End());
         }
 
     }
-
-    private IEnumerator Break()
+    
+    IEnumerator End()
     {
+        gameObject.GetComponent<MeshRenderer>().enabled = false;
+        trail.enabled = false;
         particle.Play();
-        mesh.enabled = false;
-
-
-        //gyro.enabled = false;
-
-        yield return new WaitForSeconds(particle.main.startLifetime.constantMax + 2f);
-
-        //Destroy(this.gameObject);
-        
-
-        Restart();
-        //Invoke("Restart", 1f);
-
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene(0);
     }
 
-
-    void Restart()
-    {
-
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-
-    }
 
 }

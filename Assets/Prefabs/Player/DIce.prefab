@@ -261,7 +261,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 144ee34363f56b343976db07bbad5372, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
-  forwardForce: 2000
-  sidewaysForce: 100
   camera: {fileID: 0}
+  HomeUI: {fileID: 0}
+  speed: 15
