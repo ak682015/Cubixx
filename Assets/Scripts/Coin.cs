@@ -16,6 +16,7 @@ public class Coin : MonoBehaviour
         {
            DataSet.coin += coinValue ;
             StartCoroutine(meshcollide());
+            PlayerPrefs.SetInt("coin", DataSet.coin);
         }
     }
 
