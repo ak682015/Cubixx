@@ -15,7 +15,6 @@ public class ObsController : MonoBehaviour
     Queue<GameObject> groundQueue;
     void Awake()
     {
-        Application.targetFrameRate = 60;
         obsposition = new Vector3(0f, 0f, distance);
         groundposition = new Vector3(0f, -0.001f, 150f);
         groundQueue = new Queue<GameObject>();
