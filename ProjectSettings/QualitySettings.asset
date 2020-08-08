@@ -38,7 +38,7 @@ QualitySettings:
     particleRaycastBudget: 4
     asyncUploadTimeSlice: 2
     asyncUploadBufferSize: 16
-    asyncUploadPersistentBuffer: 1
+    asyncUploadPersistentBuffer: 0
     resolutionScalingFixedDPIFactor: 1
     customRenderPipeline: {fileID: 11400000, guid: be9b9ff36be71b54396fa45437519dba,
       type: 2}

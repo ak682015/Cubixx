@@ -17,14 +17,14 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
-        particle.gameObject.GetComponent<ParticleSystemRenderer>().material = gameObject.GetComponent<MeshRenderer>().material;
+        particle.gameObject.GetComponent<ParticleSystemRenderer>().material = gameObject.GetComponent<MeshRenderer>().sharedMaterial;
     }
 
     private void Start()
     {
-        gyroEnabled = EnableGyro();
+        gyroEnabled = EnableGyro();                                                                          
         CamPos = camera.transform.position;
-        offset = camera.transform.position- transform.position;
+        offset = camera.transform.position - transform.position;
         tempPos = transform.position;
         
     }
@@ -60,7 +60,11 @@ public class PlayerMovement : MonoBehaviour
         speed += 0.0005f;
         CamPos.z = transform.position.z + offset.z;
         camera.transform.position = CamPos;
+
+        
     }
+
+    
 
     private void OnCollisionEnter(Collision collision)
     {
