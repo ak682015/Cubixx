@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public GameObject camera;
     public GameObject HomeUI;
+    public GameObject SepratedObj;
     public ParticleSystem particle;
     public TrailRenderer trail;
     private Gyroscope gyro;
@@ -44,8 +45,6 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-
-
         tempPos = transform.position;
 
         tempPos.z += speed * Time.deltaTime;
@@ -57,7 +56,7 @@ public class PlayerMovement : MonoBehaviour
 
 
         transform.position = tempPos;
-        speed += 0.0005f;
+        speed += 0.005f;
         CamPos.z = transform.position.z + offset.z;
         camera.transform.position = CamPos;
 
