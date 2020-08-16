@@ -6,7 +6,13 @@ public class UiController : MonoBehaviour
 {
     public GameObject HomeUI;
     public TextMeshProUGUI coins;
+    public Text Score;
 
+
+    private void Start()
+    {
+        Score.gameObject.SetActive(false);
+    }
     private void Update()
     {
        coins.text = DataSet.coin.ToString();
@@ -17,5 +23,6 @@ public class UiController : MonoBehaviour
     {
         HomeUI.SetActive(false);
         Time.timeScale = 1f;
+        Score.gameObject.SetActive(true);
     }
 }

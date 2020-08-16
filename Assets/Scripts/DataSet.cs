@@ -10,7 +10,7 @@ public class DataSet : MonoBehaviour
     void Start()
     {
         coin = PlayerPrefs.GetInt("coin",0);
-        selectedPlayer = 0;
+        selectedPlayer = PlayerPrefs.GetInt("player",0);
     }
 
 }

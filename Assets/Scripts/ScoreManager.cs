@@ -19,11 +19,14 @@ public class ScoreManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-        score++;
-        scoreText.text = score.ToString("0");
-        if(score>PlayerPrefs.GetInt("bestscore",0))
+        if(Time.frameCount % 3 == 0)
         {
-            PlayerPrefs.SetInt("bestscore", score);
+            score++;
+            scoreText.text = score.ToString("0");
+            if (score > PlayerPrefs.GetInt("bestscore", 0))
+            {
+                PlayerPrefs.SetInt("bestscore", score);
+            }
         }
     }
 }

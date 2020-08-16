@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     public TrailRenderer trail;
     private Gyroscope gyro;
     private bool gyroEnabled;
-
+    public Material sepratedMat;
     public float speed;
     Vector3 CamPos,tempPos;
     Vector3 offset;
@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         particle.gameObject.GetComponent<ParticleSystemRenderer>().material = gameObject.GetComponent<MeshRenderer>().sharedMaterial;
+        sepratedMat = gameObject.GetComponent<MeshRenderer>().material;
     }
 
     private void Start()
@@ -80,6 +81,8 @@ public class PlayerMovement : MonoBehaviour
         gameObject.GetComponent<MeshRenderer>().enabled = false;
         trail.enabled = false;
         particle.Play();
+        SepratedObj.transform.position = this.transform.position;
+        SepratedObj.SetActive(true);
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(0);
     }

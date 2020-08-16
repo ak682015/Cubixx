@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,7 +10,7 @@ public class PlayerManager : MonoBehaviour
     public Button select;
     public Button selected;
     public Button price;
-
+    public GameObject[] sepratedObj;
 
     int indexPlayer;
     void Start()
@@ -46,6 +47,10 @@ public class PlayerManager : MonoBehaviour
             if (i == indexPlayer)
             {
                 PlayerList[i].player.SetActive(true);
+                foreach (var obj in sepratedObj)
+                {
+                    obj.GetComponent<MeshRenderer>().material = PlayerList[indexPlayer].player.GetComponent<MeshRenderer>().material;
+                }
             }
             else
             {
@@ -105,6 +110,11 @@ public class PlayerManager : MonoBehaviour
             select.gameObject.SetActive(false);
             price.gameObject.SetActive(false);
             DataSet.selectedPlayer = indexPlayer;
+            PlayerPrefs.SetInt("player", DataSet.selectedPlayer);
+            foreach(var obj in sepratedObj)
+            {
+                obj.GetComponent<MeshRenderer>().material = PlayerList[indexPlayer].player.GetComponent<MeshRenderer>().material;
+            }
         }
 
     }
