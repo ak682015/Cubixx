@@ -6,7 +6,7 @@ using TMPro;
 
 public class ScoreManager : MonoBehaviour
 {
-    public int score;
+    public static int score;
     public Text scoreText;
     public TextMeshProUGUI bestScore;
 

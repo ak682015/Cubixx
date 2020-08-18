@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
     public float speed;
     Vector3 CamPos,tempPos;
     Vector3 offset;
-
+    public AudioManager audioManager;
     private void Awake()
     {
         particle.gameObject.GetComponent<ParticleSystemRenderer>().material = gameObject.GetComponent<MeshRenderer>().sharedMaterial;
@@ -78,7 +78,9 @@ public class PlayerMovement : MonoBehaviour
     
     IEnumerator End()
     {
+        playgamecontroller.posttoleaderboard(ScoreManager.score);
         speed = 0;
+        audioManager.Play("collide");
         DataSet.inPlay = false;
         gameObject.GetComponent<MeshRenderer>().enabled = false;
         trail.enabled = false;
