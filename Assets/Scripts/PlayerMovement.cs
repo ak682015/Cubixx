@@ -79,6 +79,7 @@ public class PlayerMovement : MonoBehaviour
     IEnumerator End()
     {
         speed = 0;
+        DataSet.inPlay = false;
         gameObject.GetComponent<MeshRenderer>().enabled = false;
         trail.enabled = false;
         particle.Play();

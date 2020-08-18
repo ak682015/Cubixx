@@ -5,6 +5,7 @@ using TMPro;
 public class UiController : MonoBehaviour
 {
     public GameObject HomeUI;
+    public GameObject coinplus;
     public TextMeshProUGUI coins;
     public Text Score;
 
@@ -23,6 +24,8 @@ public class UiController : MonoBehaviour
     {
         HomeUI.SetActive(false);
         Time.timeScale = 1f;
+        DataSet.inPlay = true;
+        coinplus.SetActive(false);
         Score.gameObject.SetActive(true);
     }
 }

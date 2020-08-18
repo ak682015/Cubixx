@@ -15,9 +15,8 @@ public class PlayerManager : MonoBehaviour
     int indexPlayer;
     void Start()
     {
-        indexPlayer = DataSet.selectedPlayer;
+        indexPlayer = PlayerPrefs.GetInt("player",0);
         showPlayer();
-        
         getUnlockedPlayerData();
     }
 
@@ -121,13 +120,13 @@ public class PlayerManager : MonoBehaviour
 
     public void buyPlayer()
     {
-        if (DataSet.coin>=1000)
+        if (DataSet.coin>=500)
         {
             selected.gameObject.SetActive(false);
             select.gameObject.SetActive(true);
             price.gameObject.SetActive(false);
             PlayerList[indexPlayer].isUnlocked = true;
-            DataSet.coin -= 1000;
+            DataSet.coin -= 500;
             changeButton(indexPlayer);
         }
     }
