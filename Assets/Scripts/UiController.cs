@@ -11,7 +11,7 @@ public class UiController : MonoBehaviour
 
 
     private void Start()
-    {
+    { 
         Score.gameObject.SetActive(false);
     }
     private void Update()

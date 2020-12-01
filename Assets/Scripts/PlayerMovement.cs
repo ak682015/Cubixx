@@ -80,7 +80,7 @@ public class PlayerMovement : MonoBehaviour
     {
         playgamecontroller.posttoleaderboard(ScoreManager.score);
         speed = 0;
-        audioManager.Play("collide");
+       // audioManager.Play("collide");
         DataSet.inPlay = false;
         gameObject.GetComponent<MeshRenderer>().enabled = false;
         trail.enabled = false;
